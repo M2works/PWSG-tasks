@@ -3,3 +3,6 @@ Repozytorium zawiera rozwiązania zadań z laboratoriów przedmiotu Programowani
 
 # Autor
 Autorem rozwiązań z repozytorium jest Maciej Momot.
+
+# Kompletność projektów
+Projekty l5 oraz l6 nie posiadają jeszcze pełnej planowanej funkcjonalności.
