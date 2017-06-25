@@ -1,0 +1,60 @@
+﻿<Window x:Class="PWŚG___WPF2.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PWŚG___WPF2"
+        mc:Ignorable="d"
+        Title="Window1" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Name="myGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Border BorderThickness="1" Grid.Column="0" Margin="5" Background="#FF90AA3A" BorderBrush="#FF90AA3A">
+                <StackPanel  Background="#FF9DC56E" Margin="3">
+                    <Expander x:Name="expander" Header="Image informations" Margin="9" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <WrapPanel>
+                            <Label Content="Name" Width="100" FontWeight="Bold"/>
+                            <Label Name="l1" Content="l" Width="100"/>
+                            <Label Content="Width" Width="100" FontWeight="Bold"/>
+                            <Label Name="l2" Width="100"/>
+                            <Label Content="Height" Width="100" FontWeight="Bold"/>
+                            <Label Name="l3" Width="100"/>
+                            <Label Content="Creation Date" Width="100" FontWeight="Bold"/>
+                            <Label Name="l4" Width="100"/>
+                        </WrapPanel>
+                    </Expander>
+                </StackPanel>
+            </Border>
+
+            <Border Name="b2" BorderThickness="1" Grid.Column="0" Margin="5" Background="#FF8E8F8A" BorderBrush="#FF8E8F8A">
+                <StackPanel  Background="#FFA8AEA0" Margin="3">
+                    <Expander x:Name="expander1" Header="Plugins" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="9" Grid.Row="1">
+                        <StackPanel>
+                            <ComboBox SelectedIndex="0" Name="pluginComboBox" ItemsSource="{Binding pluginRotate}" VerticalAlignment="Center" Margin="10">
+                                <ComboBoxItem Content="Rotate 90 plugin"/>
+                                <ComboBoxItem Content="Rotate 180 plugin"/>
+                                <ComboBoxItem Content="Rotate 270 plugin"/>
+                            </ComboBox>
+                            <Button Width="80" Height="35" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10" Content="Use plugin"/>
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Border Name="imageBorder" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="4" Grid.Column="1" Margin="5,2,3,3" BorderBrush="Blue">
+            <Image Name="imToIns">
+                <Image.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Save" Name="Save" Click="save_click"/>
+                        <MenuItem Header="Reset" Name="Reset"/>
+                        <MenuItem Header="Exit" Name="Exit" Click="exit_Click"/>
+                        
+                    </ContextMenu>
+                </Image.ContextMenu>
+            </Image>
+        </Border>
+    </Grid>
+</Window>
